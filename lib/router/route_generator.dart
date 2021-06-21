@@ -1,6 +1,6 @@
-import 'package:bases_web/views/counter_provider_view.dart';
-import 'package:bases_web/views/counter_view.dart';
-import 'package:bases_web/views/view_404.dart';
+import 'package:bases_web/ui/views/counter_provider_view.dart';
+import 'package:bases_web/ui/views/counter_view.dart';
+import 'package:bases_web/ui/views/view_404.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -9,9 +9,9 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/stateful':
-        return _fadeRoute(CounterView(), '/stateful');
+        return _fadeRoute(CounterView(base: '5'), '/stateful');
       case '/provider':
-        return _fadeRoute(CounterProviderView(), '/provider');
+        return _fadeRoute(CounterProviderView(base: '10'), '/provider');
       default:
         return _fadeRoute(View404(), '/404');
     }

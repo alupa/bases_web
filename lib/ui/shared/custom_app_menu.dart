@@ -10,7 +10,7 @@ class CustomAppMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (_, constraints) =>
-          constraints.maxWidth > 520 ? _TableDesktopMenu() : _MobileMenu(),
+          constraints.maxWidth > 640 ? _TableDesktopMenu() : _MobileMenu(),
     );
   }
 }
@@ -51,6 +51,26 @@ class _TableDesktopMenu extends StatelessWidget {
             text: 'Otra página',
             // onPressed: () => Navigator.pushNamed(context, '/123'),
             onPressed: () => locator<NavigationService>().navigateTo('/123'),
+            color: Colors.black,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          CustomFlatButton(
+            text: 'Stateful 100',
+            // onPressed: () => Navigator.pushNamed(context, '/123'),
+            onPressed: () =>
+                locator<NavigationService>().navigateTo('/stateful/100'),
+            color: Colors.black,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          CustomFlatButton(
+            text: 'Provider 200',
+            // onPressed: () => Navigator.pushNamed(context, '/123'),
+            onPressed: () =>
+                locator<NavigationService>().navigateTo('/provider?q=200'),
             color: Colors.black,
           ),
         ],
@@ -96,6 +116,26 @@ class _MobileMenu extends StatelessWidget {
             text: 'Otra página',
             // onPressed: () => Navigator.pushNamed(context, '/123'),
             onPressed: () => locator<NavigationService>().navigateTo('/123'),
+            color: Colors.black,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          CustomFlatButton(
+            text: 'Stateful 100',
+            // onPressed: () => Navigator.pushNamed(context, '/123'),
+            onPressed: () =>
+                locator<NavigationService>().navigateTo('/stateful/100'),
+            color: Colors.black,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          CustomFlatButton(
+            text: 'Provider 200',
+            // onPressed: () => Navigator.pushNamed(context, '/123'),
+            onPressed: () =>
+                locator<NavigationService>().navigateTo('/provider?q=200'),
             color: Colors.black,
           ),
         ],
